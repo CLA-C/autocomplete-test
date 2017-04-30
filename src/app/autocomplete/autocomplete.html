@@ -1,4 +1,10 @@
-<input type="text" ng-model="$ctrl.title" ng-change="$ctrl.autocomplete()" ng-model-options="{debounce: 300}">
-<ul>
-    <li ng-repeat="movieTitle in $ctrl.autocompleteList">{{movieTitle}}<li>
-<ul>
+<input type="text" id='search-input'
+    ng-model="$ctrl.title" 
+    ng-change="$ctrl.autocomplete()" 
+    ng-model-options="{debounce: 300}" 
+    ng-keyup="$ctrl.focusOnList($event)">
+<div id="autocom-list">
+    <div class='autocom-el' tabindex="0"
+        ng-repeat="movieTitle in $ctrl.autocompleteList"  
+        ng-keyup="$ctrl.selectTitle($event)">{{movieTitle}}<div>
+<div>

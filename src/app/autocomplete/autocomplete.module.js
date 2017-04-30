@@ -1,7 +1,7 @@
 import angular from 'angular';
 import { AutocompleteComponent } from './autocomplete.component';
 import { MovieService } from './movie.service';
-// import './todo.scss';
+import './autocomplete.scss';
 
 export const AutocompleteModule = angular
   .module('Autocomplete', [])
