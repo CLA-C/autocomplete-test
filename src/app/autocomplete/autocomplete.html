@@ -1,0 +1,4 @@
+<input type="text" ng-model="$ctrl.title" ng-change="$ctrl.autocomplete()" ng-model-options="{debounce: 300}">
+<ul>
+    <li ng-repeat="movieTitle in $ctrl.autocompleteList">{{movieTitle}}<li>
+<ul>

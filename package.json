@@ -1,7 +1,7 @@
 {
-  "name": "angular-webpack-workflow",
+  "name": "autocomplete-test",
   "version": "1.1.0",
-  "description": "A workflow for Angular made with Webpack",
+  "description": "A simple test anuglarjs app",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
