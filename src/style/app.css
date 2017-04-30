@@ -1,22 +1,33 @@
 /* styles in src/style directory are applied to the whole page */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i');
+
 body {
-  background: #0147A7;
-  color: #fff;
+  margin: 0;
+  font-family: Roboto, sans-serif;
 }
 
-a {
-  color: #03A9F4;
+header {
+  text-align: center;
+  background-color: #00796B;
+  height: 55px;
+  line-height: 55px;
+}
+
+.title {
+  color: white;
+  font-size: 28px;
+  font-weight: 200;
 }
 
 main {
   padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   margin-top: 50px;
   display: block;
 }
 
-footer {
-  text-align: center;
-  font-size: 0.8em;
+#autocom-label {
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #00796B;
 }

@@ -1,6 +1,6 @@
 import template from './autocomplete.html';
 
-const mockData = ["ciao", 'mamma', 'attenzione', 'stupiscimi', 'attendere', 'stuperrimo', 'albero', 'albino', 'alice']
+// const mockData = ["ciao", 'mamma', 'attenzione', 'stupiscimi', 'attendere', 'stuperrimo', 'albero', 'albino', 'alice']
 
 export const AutocompleteComponent = {
   template,
@@ -12,15 +12,13 @@ export const AutocompleteComponent = {
     }
 
     $onInit() {
-        this.title = ""      
-        this.mockData = mockData
+        this.title = ""
         this.autocompleteList = []
     }
   
     autocomplete() {
         if (!this.title)
             return this.autocompleteList = []
-        // this.filteredList = this.mockData.filter((movieTitle) => this.filterTitle(movieTitle, this.title))
 
         //get movies
         this.movieService.getMoviesByTitle(this.title)
@@ -50,15 +48,15 @@ export const AutocompleteComponent = {
     removeDuplicates(titleList) {
         let newList = []
         titleList.forEach(title => {
-            if (newList.indexOf(title) === -1)
+            console.log(titleList)
+            console.log(title !== this.title)
+            console.log(title)
+            console.log(this.title)
+            if (newList.indexOf(title) === -1 && title !== this.title)
                 newList.push(title)            
         })
         return newList
-    }    
-
-    filterTitle(title, value) {
-        return value && title.indexOf(value) === 0
-    }
+    } 
 
     //simple alphabetical sorting function
     alphabetSort(a, b) {
@@ -84,9 +82,9 @@ export const AutocompleteComponent = {
     selectTitle(e) {
         let searchEl = document.getElementById('search-input'),
             targetEl = e.target
-        console.log('event target next sibling', e.target.nextElementSibling)
-        //if right arrow add title to search box
-        if (e.keyCode === 39) {
+
+        //if right arrow or enter add title to search box
+        if (e.keyCode === 39 || e.keyCode === 13) {
             this.title = targetEl.textContent
             this.autocomplete() //manually trigger autocomplete because title change won't be detected
             searchEl.focus()
@@ -100,7 +98,6 @@ export const AutocompleteComponent = {
             targetEl.nextElementSibling ? targetEl.nextElementSibling.focus() : searchEl.focus()
         }
     }
-
 
   }
 };

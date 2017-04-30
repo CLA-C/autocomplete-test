@@ -3,8 +3,8 @@
     ng-change="$ctrl.autocomplete()" 
     ng-model-options="{debounce: 300}" 
     ng-keyup="$ctrl.focusOnList($event)">
-<div id="autocom-list">
-    <div class='autocom-el' tabindex="0"
+<div id="autocom-list" ng-show="$ctrl.autocompleteList.length > 0">
+    <div class='autocom-el' tabindex="0"        
         ng-repeat="movieTitle in $ctrl.autocompleteList"  
         ng-keyup="$ctrl.selectTitle($event)">{{movieTitle}}<div>
 <div>
