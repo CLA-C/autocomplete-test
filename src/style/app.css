@@ -31,3 +31,9 @@ main {
   font-size: 24px;
   color: #00796B;
 }
+
+@media(max-width: 500px) {
+  .title {
+    font-size: 20px;
+  }
+}

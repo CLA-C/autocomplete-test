@@ -1,6 +1,6 @@
 #search-input {
     height: 40px;
-    width: 80vh;
+    width: 80vw;
     max-width: 400px;
     padding: 3px;
     font-size: 20px;
@@ -14,7 +14,7 @@
 }
 
 #autocom-list {
-    width: 80vh;
+    width: 80vw;
     max-width: 400px;
     margin: auto;
     text-align: left;

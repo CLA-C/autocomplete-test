@@ -23,5 +23,9 @@ The app is quite basic, all the interesting parts are in the autocomplete compon
 The app call the open API at [www.omdbapi.com](http://www.omdbapi.com/) to get movie data. While this is convenient since no complex authentication is required, there are a few limitations:
  * Maximum of 10 results per call
  * Little customization of search (just full word search on title)
+ * Some "weird" result titles :)
+
+## Browser Compatibility
+Tested (briefly) with the latest versions of Firefox, Chrome and Edge.
 
 

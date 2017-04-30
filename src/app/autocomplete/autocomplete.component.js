@@ -34,8 +34,7 @@ export const AutocompleteComponent = {
         
         let titleList = res.Search.map(movieObj => movieObj.Title) //just use the title                                
                               .sort(this.alphabetSort) //sort the array
-        this.autocompleteList = this.removeDuplicates(titleList)
-        console.log(this.autocompleteList)
+        this.autocompleteList = this.removeDuplicates(titleList) //remove duplicates
     }
 
     //handle errors in call, for now just reset list and log error
@@ -48,11 +47,7 @@ export const AutocompleteComponent = {
     removeDuplicates(titleList) {
         let newList = []
         titleList.forEach(title => {
-            console.log(titleList)
-            console.log(title !== this.title)
-            console.log(title)
-            console.log(this.title)
-            if (newList.indexOf(title) === -1 && title !== this.title)
+            if (newList.indexOf(title) === -1 && (title !== this.title))
                 newList.push(title)            
         })
         return newList
@@ -85,19 +80,19 @@ export const AutocompleteComponent = {
 
         //if right arrow or enter add title to search box
         if (e.keyCode === 39 || e.keyCode === 13) {
-            this.title = targetEl.textContent
+            this.title = targetEl.dataset.title //get selected title from element dataset
             this.autocomplete() //manually trigger autocomplete because title change won't be detected
             searchEl.focus()
         }  
-        //if up arrow select previous title or input
+        //if up arrow focus on previous title or input
         else if (e.keyCode === 38) {
             targetEl.previousElementSibling ? targetEl.previousElementSibling.focus() : searchEl.focus()
         } 
-        // if down arrow select next title or input
+        // if down arrow focus on next title or input
         else if (e.keyCode === 40) {
             targetEl.nextElementSibling ? targetEl.nextElementSibling.focus() : searchEl.focus()
         }
     }
 
   }
-};
+}
